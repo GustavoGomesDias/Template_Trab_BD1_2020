@@ -68,11 +68,29 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+CLIENTE: Tabela que armazena as informações dos clientes da empresa.
+CODIGO: Campo que refere-se a identificação de cada cliente na tabela CLIENTE.
+TELEFONE: Campo que guarda o número de telefone de cada um dos clientes da empresa.
+NOME: Campo que guarda o nome completo dos clientes.
+ENDERECO: Campo que guarda o endereço de cada um dos clientes.
+
+PESSOA_FISICA: Tabela que armazena informações específicas de clientes que são pessoas físicas.
+CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.
+CPF: Campo que armazena o Cadastro de Pessoa Física de cada pessoa física que é cliente da empresa.
+
+PESSOA_JURIDICA: Tabela que armazena informações específicas de clientes que são pessoas jurídicas.
+CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.
+CNPJ: Campo que armazena o Cadastro Nacional de Pessoa Jurídica de cada pessoa jurídica que é cliente da empresa.
+
+ENTREGA: Tabela que guarda informações referentes as entregas feitas pela empresa.
+CODIGO: Campo que refere-se a identificação da entrega dentro da tabela ENTREGA.
+DATA_ENVIO: Campo que guarda a data em que o remetente enviou ou programou para que a entrega fosse enviada até seu destino.
+DATA_RECEBIMENTO: Campo que guarda a data em que a entrega chegou no seu destinatário.
+
+ENTREGADOR: Tabela que guarda as informações de todos os entregadores que trabalham na empresa.
+CPF: Campo que armazena o Cadastro de Pessoa Física de cada entregador trabalhando para a empresa.
+NOME: Campo que armazena o nome de cada entregador trabalhando para a empresa.
+TELEFONE: Campo que armazena o telefone de cada entregador trabalhando para a empresa.
 
 
 ### 6	MODELO LÓGICO<br>
