@@ -300,7 +300,17 @@ VALUES
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
-#### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+#### 9.1
+```sql
+SELECT * FROM cliente;
+
+SELECT * FROM pessoa_fisica;
+SELECT * FROM pessoa_juridica;
+
+SELECT * FROM entregador;
+
+SELECT * FROM entrega;
+```
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
