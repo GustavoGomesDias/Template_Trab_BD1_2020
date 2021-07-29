@@ -49,9 +49,11 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-- [Link da tabela no google docs](https://docs.google.com/spreadsheets/d/13_0Fg4CH-A-yabEl_K-JrE4yPIx7Xz_6iWWepAXBzsE/edit?usp=sharing)
-- ![Download do arquivo csv (está aqui no github)](#)
-- ![Download do arquivo xlsx (está aqui no github](#)
+    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
+    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
+    
+![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+    
     
 ### 5.MODELO CONCEITUAL<br>
     A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
