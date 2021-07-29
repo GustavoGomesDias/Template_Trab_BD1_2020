@@ -105,8 +105,62 @@ TELEFONE: Campo que armazena o telefone de cada entregador trabalhando para a em
 ![Modelo Lógico](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/modelos/logico.png)
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
+##### CLIENTE
+```sql
+CREATE TABLE CLIENTE(
+	codigo integer NOT NULL,
+	nome varchar(100),
+	telefone varchar(16),
+	estado varchar(2),
+	cidade varchar(100),
+	bairro varchar(100),
+	rua varchar(100),
+	numero_end integer,
+	PRIMARY KEY (codigo)
+);
+```
+##### PESSOA_FISICA
+```sql
+CREATE TABLE PESSOA_FISICA(
+	codigo integer NOT NULL,
+	cpf varchar(11),
+	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+```
+##### PESSOA_JURIDICA
+```sql
+CREATE TABLE PESSOA_JURIDICA(
+	codigo integer NOT NULL,
+	cnpj varchar(14),
+	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+```
+##### ENTREGADOR
+```sql
+CREATE TABLE ENTREGADOR(
+	cpf varchar(11) NOT NULL,
+	nome varchar(100),
+	telefone varchar(16),
+	PRIMARY KEY (cpf)
+);
+```
+##### ENTREGA
+```sql
+CREATE TABLE ENTREGA(
+	codigo integer NOT NULL,
+	cliente_envio integer NOT NULL,
+	cliente_recebe integer NOT NULL,
+	entregador_cpf varchar(11) NOT NULL,
+	cod_rota integer NOT NULL,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (cliente_envio) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (cliente_recebe) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (entregador_cpf) REFERENCES entregador(cpf) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+ALTER TABLE entrega ADD data_envio date;
+ALTER TABLE entrega ADD data_recebimento date;
+```
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
