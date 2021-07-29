@@ -54,7 +54,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 - [Download do arquivo xlsx](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/tabela/yourDelivery.xlsx?raw=true)
     
 ### 5.MODELO CONCEITUAL<br>
-![Modelo Conceitual](#)
+![Modelo Conceitual](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/modelos/conceitual.png)
 
 - Principais entidades
   - Entrega;
@@ -76,7 +76,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 ### 6	MODELO LÓGICO<br>
-![Modelo Lógico](#)
+![Modelo Lógico](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/modelos/logico.png)
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
