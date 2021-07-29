@@ -68,29 +68,37 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-CLIENTE: Tabela que armazena as informações dos clientes da empresa.
-CODIGO: Campo que refere-se a identificação de cada cliente na tabela CLIENTE.
-TELEFONE: Campo que guarda o número de telefone de cada um dos clientes da empresa.
-NOME: Campo que guarda o nome completo dos clientes.
-ENDERECO: Campo que guarda o endereço de cada um dos clientes.
+CLIENTE: Tabela que armazena as informações dos clientes da empresa.<br>
+CODIGO: Campo que refere-se a identificação de cada cliente na tabela CLIENTE.<br>
+TELEFONE: Campo que guarda o número de telefone de cada um dos clientes da empresa.<br>
+NOME: Campo que guarda o nome completo dos clientes.<br>
+ENDERECO: Campo que guarda o endereço de cada um dos clientes.<br>
 
-PESSOA_FISICA: Tabela que armazena informações específicas de clientes que são pessoas físicas.
-CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.
-CPF: Campo que armazena o Cadastro de Pessoa Física de cada pessoa física que é cliente da empresa.
+---
 
-PESSOA_JURIDICA: Tabela que armazena informações específicas de clientes que são pessoas jurídicas.
-CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.
-CNPJ: Campo que armazena o Cadastro Nacional de Pessoa Jurídica de cada pessoa jurídica que é cliente da empresa.
+PESSOA_FISICA: Tabela que armazena informações específicas de clientes que são pessoas físicas.<br>
+CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.<br>
+CPF: Campo que armazena o Cadastro de Pessoa Física de cada pessoa física que é cliente da empresa.<br>
 
-ENTREGA: Tabela que guarda informações referentes as entregas feitas pela empresa.
-CODIGO: Campo que refere-se a identificação da entrega dentro da tabela ENTREGA.
-DATA_ENVIO: Campo que guarda a data em que o remetente enviou ou programou para que a entrega fosse enviada até seu destino.
-DATA_RECEBIMENTO: Campo que guarda a data em que a entrega chegou no seu destinatário.
+---
 
-ENTREGADOR: Tabela que guarda as informações de todos os entregadores que trabalham na empresa.
-CPF: Campo que armazena o Cadastro de Pessoa Física de cada entregador trabalhando para a empresa.
-NOME: Campo que armazena o nome de cada entregador trabalhando para a empresa.
-TELEFONE: Campo que armazena o telefone de cada entregador trabalhando para a empresa.
+PESSOA_JURIDICA: Tabela que armazena informações específicas de clientes que são pessoas jurídicas.<br>
+CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.<br>
+CNPJ: Campo que armazena o Cadastro Nacional de Pessoa Jurídica de cada pessoa jurídica que é cliente da empresa.<br>
+
+---
+
+ENTREGA: Tabela que guarda informações referentes as entregas feitas pela empresa.<br>
+CODIGO: Campo que refere-se a identificação da entrega dentro da tabela ENTREGA.<br>
+DATA_ENVIO: Campo que guarda a data em que o remetente enviou ou programou para que a entrega fosse enviada até seu destino.<br>
+DATA_RECEBIMENTO: Campo que guarda a data em que a entrega chegou no seu destinatário.<br>
+
+---
+
+ENTREGADOR: Tabela que guarda as informações de todos os entregadores que trabalham na empresa.<br>
+CPF: Campo que armazena o Cadastro de Pessoa Física de cada entregador trabalhando para a empresa.<br>
+NOME: Campo que armazena o nome de cada entregador trabalhando para a empresa.<br>
+TELEFONE: Campo que armazena o telefone de cada entregador trabalhando para a empresa.<br>
 
 
 ### 6	MODELO LÓGICO<br>
