@@ -58,7 +58,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 - Principais entidades
   - Entrega;
-  - Cliente;
+  - Pessoa;
   - Entregador;    
     
         
@@ -68,7 +68,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-CLIENTE: Tabela que armazena as informações dos clientes da empresa.<br>
+Pessoa: Tabela que armazena as informações das pessoas envolvidas com a entrega.<br>
 CODIGO: Campo que refere-se a identificação de cada cliente na tabela CLIENTE.<br>
 TELEFONE: Campo que guarda o número de telefone de cada um dos clientes da empresa.<br>
 NOME: Campo que guarda o nome completo dos clientes.<br>
@@ -77,29 +77,31 @@ ENDERECO: Campo que guarda o endereço de cada um dos clientes.<br>
 ---
 
 PESSOA_FISICA: Tabela que armazena informações específicas de clientes que são pessoas físicas.<br>
-CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.<br>
 CPF: Campo que armazena o Cadastro de Pessoa Física de cada pessoa física que é cliente da empresa.<br>
 
 ---
 
 PESSOA_JURIDICA: Tabela que armazena informações específicas de clientes que são pessoas jurídicas.<br>
-CODIGO: Campo que armazena um código referente ao campo CODIGO que está na tabela CLIENTES, ele associa as informações específicas armazenadas aqui com as informações gerais armazenadas na tabela CLIENTE.<br>
 CNPJ: Campo que armazena o Cadastro Nacional de Pessoa Jurídica de cada pessoa jurídica que é cliente da empresa.<br>
+
+---
+
+ENTREGADOR: Tabela que guarda as informações de todos os entregadores que trabalham na empresa.<br>
+CNH: Campo que armazena a Carteira Nacional de Habilitação.<br>
+
 
 ---
 
 ENTREGA: Tabela que guarda informações referentes as entregas feitas pela empresa.<br>
 CODIGO: Campo que refere-se a identificação da entrega dentro da tabela ENTREGA.<br>
+TiPO_ENTREGA: Campo que guarda de que tipo é a encomenda (exp.: Eletrônico, Granel Líquido).<br>
+PESO_ENTREGA: Campo que guarda o peso (em quilograma - km) da entrega.<br>
+QTD_ENTREGA: Campo que guarda a quantidade de itens pertecente a entrega.<br>
+ALT_ENTREGA: Campo que guarda a altura da entrega (contando a embalagem e medido em centímetros - cm).<br>
+LARG_ENTREGA: Campo que guarda a largura da entrega (contando a embalagem e medido em centímetros - cm).<br>
+PROFUN_ENTREGA: Campo que guarda a profundidade da entrega (contando a embalagem e medido em centímetros - cm).<br>
 DATA_ENVIO: Campo que guarda a data em que o remetente enviou ou programou para que a entrega fosse enviada até seu destino.<br>
 DATA_RECEBIMENTO: Campo que guarda a data em que a entrega chegou no seu destinatário.<br>
-
----
-
-ENTREGADOR: Tabela que guarda as informações de todos os entregadores que trabalham na empresa.<br>
-CPF: Campo que armazena o Cadastro de Pessoa Física de cada entregador trabalhando para a empresa.<br>
-NOME: Campo que armazena o nome de cada entregador trabalhando para a empresa.<br>
-TELEFONE: Campo que armazena o telefone de cada entregador trabalhando para a empresa.<br>
-
 
 ### 6	MODELO LÓGICO<br>
 ![Modelo Lógico](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/modelos/logico.png)
