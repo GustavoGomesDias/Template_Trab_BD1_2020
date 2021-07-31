@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS pessoa CASCADE;
+DROP TABLE IF EXISTS pessoa_fisica;
+DROP TABLE IF EXISTS pessoa_juridica;
+DROP TABLE IF EXISTS entregador;
+DROP TABLE IF EXISTS entrega;

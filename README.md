@@ -109,7 +109,7 @@ DATA_RECEBIMENTO: Campo que guarda a data em que a entrega chegou no seu destina
 ### 7	MODELO FÍSICO<br>
 ##### CLIENTE
 ```sql
-CREATE TABLE CLIENTE(
+CREATE TABLE pessoa(
 	codigo integer NOT NULL,
 	nome varchar(100),
 	telefone varchar(16),
@@ -140,25 +140,30 @@ CREATE TABLE PESSOA_JURIDICA(
 ##### ENTREGADOR
 ```sql
 CREATE TABLE ENTREGADOR(
-	cpf varchar(11) NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	PRIMARY KEY (cpf)
+	codigo integer NOT NULL,
+	cnh varchar(14),
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 ```
 ##### ENTREGA
 ```sql
 CREATE TABLE ENTREGA(
-    codigo integer NOT NULL,
-    cliente_envio integer NOT NULL,
-    cliente_recebe integer NOT NULL,
-    entregador_cpf varchar(11) NOT NULL,
-    data_envio date,
-    data_recebimento date,
-    PRIMARY KEY (codigo),
-    FOREIGN KEY (cliente_envio) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (cliente_recebe) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (entregador_cpf) REFERENCES entregador(cpf) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	codigo integer NOT NULL,
+	cliente_envio integer NOT NULL,
+	cliente_recebe integer NOT NULL,
+	entregador integer NOT NULL,
+	tipo_entrega varchar(30),
+	peso_entrega float,
+	alt_entrega float,
+	larg_entrega float,
+	profun_entrega float,
+	qtd_entrega integer,
+	data_envio date,
+	data_recebimento date,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (cliente_envio) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (cliente_recebe) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (entregador) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 ```
         
@@ -166,10 +171,10 @@ CREATE TABLE ENTREGA(
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### Drop
 ```sql
-DROP TABLE IF EXISTS cliente CASCADE;
+DROP TABLE IF EXISTS pessoa CASCADE;
 DROP TABLE IF EXISTS pessoa_fisica;
 DROP TABLE IF EXISTS pessoa_juridica;
-DROP TABLE IF EXISTS entregador CASCADE;
+DROP TABLE IF EXISTS entregador;
 DROP TABLE IF EXISTS entrega;
 ```
 
@@ -207,6 +212,9 @@ CREATE TABLE ENTREGADOR(
 
 CREATE TABLE ENTREGA(
 	codigo integer NOT NULL,
+	cliente_envio integer NOT NULL,
+	cliente_recebe integer NOT NULL,
+	entregador integer NOT NULL,
 	tipo_entrega varchar(30),
 	peso_entrega float,
 	alt_entrega float,
@@ -215,9 +223,6 @@ CREATE TABLE ENTREGA(
 	qtd_entrega integer,
 	data_envio date,
 	data_recebimento date,
-	cliente_envio integer NOT NULL,
-	cliente_recebe integer NOT NULL,
-	entregador integer NOT NULL,
 	PRIMARY KEY (codigo),
 	FOREIGN KEY (cliente_envio) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (cliente_recebe) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
@@ -285,17 +290,29 @@ VALUES
 	(104, '82192867698'),
 	(105, '07055649667'),
 	(106, '17699458222');
+
+INSERT INTO entrega
+VALUES
+	(1, 2, 3, 100, 'Eletrônico', 5.7,	55.9, 89.5, 8.2, 1, '2012-06-01', '2012-07-05'),
+	(2, 2, 3, 100, 'Eletrônico', 0.205, 16.4, 7.58, 0.89, 1, '2013-02-01', '2013-03-06'),
+	(3, 1, 5, 101, 'Granel Líquido', 10.8, 24.5, 18, 27, 2,'2018-04-01', '2018-04-12'),
+	(4, 14, 6, 102, 'Carga Frágil', 2.4, 22.5, 9, 22.5, 3,'2020-03-14', '2020-03-30'),
+	(5, 8, 4, 103, 'Congelados', 3, 5, 16, 5, 10,'2020-09-25', '2020-10-10'),
+	(6, 8, 5, 102, 'Congelados', 3, 5, 16, 5, 30, '2020-12-01', '2020-12-14'),
+	(7, 14, 6, 102, 'Carga Frágil', 1, 12.9, 13.6, 23.9, 3, '2021-04-30', '2021-05-11'),
+	(8, 14, 20, 104, 'Carga Seca', 2.36, 90, 35, 44, 1, '2021-05-02', '2021-05-10'),
+	(9, 18, 11, 105, 'Granel Líquido', 2, 10, 10, 10, 5, '2021-05-13', '2021-05-19'),
+	(10, 19, 1, 106, 'Perecível', 0.05, 4, 9.3, 9.3, 5, '2021-06-01', '2021-07-01');
 ```
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 ```sql
-SELECT * FROM cliente;
+SELECT * FROM pessoa;
 
 SELECT * FROM pessoa_fisica;
 SELECT * FROM pessoa_juridica;
-
 SELECT * FROM entregador;
 
 SELECT * FROM entrega;
