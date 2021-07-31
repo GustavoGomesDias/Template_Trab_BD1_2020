@@ -311,26 +311,26 @@ VALUES
 ```sql
 SELECT * FROM pessoa;
 ```
-![Resultado do select em pessoa pt.1](#)
-![Resultado do select em pessoa pt.2](#)
-![Resultado do select em pessoa pt.3](#)
+![Resultado do select em pessoa pt.1](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/select-pessoa.png)
+![Resultado do select em pessoa pt.2](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/select-pessoa2.png)
+![Resultado do select em pessoa pt.3](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/select-pessoa3.png)
 
 ```sql
 SELECT * FROM pessoa_fisica;
 ```
-![Resultado do select em pessoa_fisica](#)
+![Resultado do select em pessoa_fisica](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/select-pessoa-fisica.png)
 ```sql
 SELECT * FROM pessoa_juridca;
 ```
-![Resultado do select em pessoa_juridica](#)
+![Resultado do select em pessoa_juridica](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/select-pessoa-juridica.png)
 ```sql
 SELECT * FROM entregador;
 ```
-![Resultado do select em entregador](#)
+![Resultado do select em entregador](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/entregador.png)
 ```sql
 SELECT * FROM entrega;
 ```
-![Resultado do select em entrega](#)
+![Resultado do select em entrega](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/entregasr.gif)
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
