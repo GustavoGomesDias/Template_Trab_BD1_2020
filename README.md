@@ -175,7 +175,7 @@ DROP TABLE IF EXISTS entrega;
 
 #### Create
 ```sql
-CREATE TABLE CLIENTE(
+CREATE TABLE pessoa(
 	codigo integer NOT NULL,
 	nome varchar(100),
 	telefone varchar(16),
@@ -190,40 +190,43 @@ CREATE TABLE CLIENTE(
 CREATE TABLE PESSOA_FISICA(
 	codigo integer NOT NULL,
 	cpf varchar(11),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE PESSOA_JURIDICA(
 	codigo integer NOT NULL,
 	cnpj varchar(14),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ENTREGADOR(
-	cpf varchar(11) NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	PRIMARY KEY (cpf)
+	codigo integer NOT NULL,
+	cnh varchar(14),
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ENTREGA(
-    codigo integer NOT NULL,
-    cliente_envio integer NOT NULL,
-    cliente_recebe integer NOT NULL,
-    entregador_cpf varchar(11) NOT NULL,
-    data_envio date,
-    data_recebimento date,
-    PRIMARY KEY (codigo),
-    FOREIGN KEY (cliente_envio) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (cliente_recebe) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (entregador_cpf) REFERENCES entregador(cpf) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	codigo integer NOT NULL,
+	tipo_entrega varchar(30),
+	peso_entrega float,
+	alt_entrega float,
+	larg_entrega float,
+	profun_entrega float,
+	qtd_entrega integer,
+	data_envio date,
+	data_recebimento date,
+	cliente_envio integer NOT NULL,
+	cliente_recebe integer NOT NULL,
+	entregador integer NOT NULL,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (cliente_envio) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (cliente_recebe) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (entregador) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 ```
 #### Insert
-##### Clientes
-
 ```sql
-INSERT INTO CLIENTE
+INSERT INTO PESSOA
 VALUES
 	(1, 'João Martins', '11911111111', 'ES', 'Serra', 'Bairro das Rosas', 'Caramelo', 11),
 	(2, 'Danilo Castro Ferreira', '19933355914', 'SP', 'Sumaré', 'Sensatez', 'Rua Grécia', 570),
@@ -241,10 +244,15 @@ VALUES
 	(14, 'Apollo Artigos Gerais', '63989572172', 'TO', 'Gurupi', 'Shangri-Lá', 'Rua B 2', 989),
 	(18, 'Joaquim e Stefany Comercio de Bebidas Ltda', '11994625578', 'SP', 'São Paulo', 'Jabaquara', 'Rua Monsenhor Basílio Pereira', 521),
 	(19, 'Anthony e Alexandre Pães e Doces Ltda', '15994767868', 'SP', 'Sorocaba', 'Vila Zacarias', 'Rua Doutor Sydneu Antônio Urban', 286),
-	(20, 'Sua Pizza Delivery ME', '18991644147', 'GO', 'Rio Verde', 'Catelandia', 'Rua Major Rocha', 1517);
-```
-##### PESSOA_FISICA
-```sql
+	(20, 'Sua Pizza Delivery ME', '18991644147', 'GO', 'Rio Verde', 'Catelandia', 'Rua Major Rocha', 1517),
+	(100, 'Mateus Sousa Costa', '61998679042', 'MG', 'Betim', 'Bairro das Cruzes', 'Rua José da Conceição', 460),
+	(101, 'Rafael Cardoso Correia', '11947705880', 'SP', 'São Paulo', 'Bairro da Tijuca', 'Rua Pedra Lavrada', 1065),
+	(102, 'Gustavo Alves Rocha', '21942156639', 'RS', 'Porto Alegre', 'Bairro do Crescimento', 'Acesso E', 164),
+	(103, 'Thaís Ribeiro Barros', '19954754928', 'PE', 'Petrolina', 'Bairro das Palmeiras', 'Rua Deputada Ana Oliveira', 1528),
+	(104, 'Anna Oliveira Pinto', '19954754928', 'PR', 'Curitiba', 'Bairro da Catedral', 'Rua Astor Toniolo', 1115),
+	(105, 'Livia Castro Rodrigues', '8191202990', 'MG', 'Montes Claros', 'Bairro Serra City', 'Rua C', 1703),
+	(106, 'Sarah Correia Barros', '31985966293', 'SP', 'Jacareí', 'Bairro Joaninha', 'Rua Olímpio Catão', 507);
+	
 INSERT INTO pessoa_fisica
 VALUES
 	(1, '75198965014'),
@@ -254,9 +262,7 @@ VALUES
 	(5, '43388477000'),
 	(6, '22244606007'),
 	(7, '31370743041');
-```
-##### PESSOA_JURIDICA
-```sql
+	
 INSERT INTO pessoa_juridica
 VALUES
 	(8, '19215089000131'),
@@ -266,38 +272,19 @@ VALUES
 	(12, '67332463000121'),
 	(13, '92712036000116'),
 	(14, '03436907000196'),
-    	(18, '62319531000107'),
+	(18, '62319531000107'),
 	(19, '57740003000189'),
 	(20, '32545024000112');
-```
-##### ENTREGADOR
-```sql
+
 INSERT INTO entregador
 VALUES
-	('87712919038', 'Rafael Cardoso Correia', '11947705880'),
-	('91773289063', 'Rodrigo Cardoso Dias', '61939542649'),
-	('54282005025', 'Thaís Ribeiro Barros', '19954754928'),
-	('52872702083', 'Mateus Sousa Costa', '61998679042'),
-	('04295519081', 'Sarah Correia Barros', '31985966293'),
-	('39706964029', 'Luis Oliveira Ribeiro', '93935138484'),
-	('93528591030', 'Gustavo Alves Rocha', '21942156639'),
-	('44808974967', 'Anna Oliveira Pinto', '1991312944'),
-	('12671964919', 'Livia Castro Rodrigues', '8191202990');
-```
-##### ENTREGA
-```sql
-INSERT INTO entrega
-VALUES
-	(1, 2, 3, '52872702083', '2012-06-01', '2012-07-05'),
-	(2, 2, 3, '52872702083', '2013-02-01', '2013-03-06'),
-	(3, 1, 5, '87712919038', '2018-04-01', '2018-04-12'),
-	(4, 14, 6, '93528591030', '2020-03-14', '2020-03-30'),
-	(5, 8, 4, '54282005025', '2020-09-25', '2020-10-10'),
-	(6, 8, 5, '93528591030', '2020-12-01', '2020-12-14'),
-	(7, 14, 6, '93528591030', '2021-04-30', '2021-05-11'),
-	(8, 14, 20, '44808974967', '2021-05-02', '2021-05-10'),
-	(9, 18, 11, '12671964919', '2021-05-13', '2021-05-19'),
-	(10, 19, 1, '04295519081', '2021-06-01', '2021-07-01');
+	(100, '03993638185'),
+	(101, '37376176159'),
+	(102, '56845638820'),
+	(103, '64984431466'),
+	(104, '82192867698'),
+	(105, '07055649667'),
+	(106, '17699458222');
 ```
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
