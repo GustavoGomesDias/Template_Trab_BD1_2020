@@ -30,7 +30,12 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/Overview.png" height="400px">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/prototipo/Login.png" height="400px">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/prototipo/Register.png" height="400px">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/prototipo/perfil.png" height="400px">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/prototipo/entregas.png" height="400px">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/prototipo/chat.png" height="400px">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/prototipo/Overview.png" height="400px">
 
 [Arquivo PDF do Protótipo Balsamiq feito para Empresa YourDelivery](https://github.com/GustavoGomesDias/YourDelivery/raw/master/arquivos_trabalho/prototipo.pdf)
 
