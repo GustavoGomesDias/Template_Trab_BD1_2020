@@ -1,4 +1,4 @@
-# TRABALHO 01:  YourDelivery
+# TRABALHO 01:  Título do Trabalho
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
@@ -13,16 +13,12 @@ Ricardo Rocha Ribeiro:r3ifes@gmail.com<br>
 Este documento contém a especificação do projeto do banco de dados YourDelivery 
 <br>e motivação da escolha realizada. <br>
 
-> A visão da empresa "YourDelivery" é servir seu cliente com a maior rapidez e confiabilidade no mercado. Para isso, com o objetivo de obter mais informações sobre o que se passa atualmente na empresa, foi feito mudanças no sistema da empresa para armazenar informações sobre os clientes, entregadores e as entregas que serão feitas. O sistema da YourDelivery tem como objetivo inicial ser uma plataforma onde os vendedores poderão .... Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
+> A visão da empresa "YourDelivery" é servir seu cliente com a maior rapidez e confiabilidade no mercado. Para isso, com o objetivo de obter mais informações sobre o que se passa atualmente na empresa, foi feito mudanças no sistema da empresa para armazenar informações sobre os clientes, entregadores e as entregas que serão feitas. O sistema da YourDelivery tem como objetivo inicial ser uma plataforma onde os vendedores poderão oferecer seus produtos para clientes, que também terão acesso ao . Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
  
 
 ### 3.MINI-MUNDO<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Entrevista com o usuário e identificação dos requisitos.(quando for o caso de sistemas com cliente  real)<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
+Uma empresa de entregas de produto teve um grande crescimento de entregas por conta da pandemia e, para otimizar as entregas, ela decidiu guardar informações no seu banco de dados para reformular suas estratégias logísticas. Você que trabalha no setor de dados da empresa, deverá registrar o cpf, nome, telefone e endereço do cliente, também registrará o cnpj, nome, telefone e endereço da empresa que enviou a entrega, cpf, nome e telefone do entregador e, por fim, deverá registrar a data de expedição da entrega, a data de entrega e o código da rota que o entregador pegou.
 
 > O sistema proposto para a "Devcom Projetos conterá as informacões aqui detalhadas. Dos Projetos serão armazenados o número, nome e cidade. Dos Departamentos serão armazenados o número e nome. O cliente destacou que cada projeto pode ter vários departamentos auxiliando no seu desenvolvimento, e cada departamento pode estar envolvido em vários projetos. Os dados relativos aos empregados que serão armazenados são: rg, nome, cpf, salário, data inicial do salario e supervisor de cada empregado. É importante destacar que cada empregado pode ser supervisionado por outro empregado, e obrigatoriamente deve estar alocado a um único departamento, mas pode gerenciar vários departamentos ou não gerenciar nenhum. Um empregado também pode participar de vários projetos, caso seja necessário, mas não precisa obrigatoriamente estar alocado em algum projeto. Com relação aos dependentes serão armazenadas as informações de nome do dependente, data de nascimento, sexo e grau de parentesco. Cada empregado pode ter vários dependentes, mas um dependente esta associado apenas a um único empregado. Com relação ao histórico de salário devemos armazenar as informações de valor do salário, data de início do salário no período e data final do salário no período. É importante lembrar que cada funcionario pode ter diversos eventos de histórico de salário associados a ele visto que este dado pode ser alterado várias vezes. 
 
@@ -38,6 +34,13 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
+> A YourDelivery precisa inicialmente dos seguintes relatórios:
+* Relatório que obtenha a quantidade de volume que foi levado em todas as rotas. Este relatório tem o objetivo de analisar em quais rotas precisamos de carros com um espaço de armazenamento maior.
+* Relatório que obtenha a quantidade de peso que foi levado em todas as rotas. Diferente do outro relatório, este servirá para entendermos quais rotas precisamos aumentar a frota ou usar carros mais resistentes.
+* Relatório sobre o volume/peso em cada veículo em cada rota. Este relatório nos ajuda a entender em quais rotas precisa-se rebalancear pela quantidade de peso. Para que nenhum carro vá com uma média de peso por volume muito maior do que o outro.
+* Relátório sobre quais rotas estão sendo mais utilizadas. Será de grande ajuda para entender mais sobre a atual situação da logística da empresa.
+* Relatório sobre os períodos do ano em que há mais demanda.
+
 > A Empresa DevCom precisa inicialmente dos seguintes relatórios:
 * Relatório que mostre o nome de cada supervisor(a) e a quantidade de empregados supervisionados.
 * Relatório relativo aos os supervisores e supervisionados. O resultado deve conter o nome do supervisor e nome do supervisionado além da quantidade total de horas que cada supervisionado tem alocada aos projetos existentes na empresa.
@@ -49,17 +52,24 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-- [Link da tabela no google docs](https://docs.google.com/spreadsheets/d/13_0Fg4CH-A-yabEl_K-JrE4yPIx7Xz_6iWWepAXBzsE/edit?usp=sharing)
-- [Link arquivo csv](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/tabela/yourDelivery.csv) (tá neste repo e é possível ver a tabela formatada)
-- [Download do arquivo xlsx](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/tabela/yourDelivery.xlsx?raw=true)
+    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
+    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
+    
+![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+    
     
 ### 5.MODELO CONCEITUAL<br>
-![Modelo Conceitual](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/modelos/conceitual.png)
-
-- Principais entidades
-  - Entrega;
-  - Pessoa;
-  - Entregador;    
+    A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
+    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
+        * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
+    C) Principais fluxos de informação/entidades do sistema (mínimo 3). <br>Dica: normalmente estes fluxos estão associados as tabelas que conterão maior quantidade de dados 
+    D) Qualidade e Clareza
+        Garantir que a semântica dos atributos seja clara no esquema (nomes coerentes com os dados).
+        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
+        e tuplas falsas (Aplicar os conceitos de normalização abordados).   
+        
+![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
+    
     
         
     
@@ -68,251 +78,34 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-Pessoa: Tabela que armazena as informações das pessoas envolvidas com a entrega.<br>
-CODIGO: Campo que refere-se a identificação de cada cliente na tabela CLIENTE.<br>
-TELEFONE: Campo que guarda o número de telefone de cada um dos clientes da empresa.<br>
-NOME: Campo que guarda o nome completo dos clientes.<br>
-ENDERECO: Campo que guarda o endereço de cada um dos clientes.<br>
+    [objeto]: [descrição do objeto]
+    
+    EXEMPLO:
+    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
+    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
 
----
-
-PESSOA_FISICA: Tabela que armazena informações específicas de clientes que são pessoas físicas.<br>
-CPF: Campo que armazena o Cadastro de Pessoa Física de cada pessoa física que é cliente da empresa.<br>
-
----
-
-PESSOA_JURIDICA: Tabela que armazena informações específicas de clientes que são pessoas jurídicas.<br>
-CNPJ: Campo que armazena o Cadastro Nacional de Pessoa Jurídica de cada pessoa jurídica que é cliente da empresa.<br>
-
----
-
-ENTREGADOR: Tabela que guarda as informações de todos os entregadores que trabalham na empresa.<br>
-CNH: Campo que armazena a Carteira Nacional de Habilitação.<br>
-
-
----
-
-ENTREGA: Tabela que guarda informações referentes as entregas feitas pela empresa.<br>
-CODIGO: Campo que refere-se a identificação da entrega dentro da tabela ENTREGA.<br>
-TiPO_ENTREGA: Campo que guarda de que tipo é a encomenda (exp.: Eletrônico, Granel Líquido).<br>
-PESO_ENTREGA: Campo que guarda o peso (em quilograma - km) da entrega.<br>
-QTD_ENTREGA: Campo que guarda a quantidade de itens pertecente a entrega.<br>
-ALT_ENTREGA: Campo que guarda a altura da entrega (contando a embalagem e medido em centímetros - cm).<br>
-LARG_ENTREGA: Campo que guarda a largura da entrega (contando a embalagem e medido em centímetros - cm).<br>
-PROFUN_ENTREGA: Campo que guarda a profundidade da entrega (contando a embalagem e medido em centímetros - cm).<br>
-DATA_ENVIO: Campo que guarda a data em que o remetente enviou ou programou para que a entrega fosse enviada até seu destino.<br>
-DATA_RECEBIMENTO: Campo que guarda a data em que a entrega chegou no seu destinatário.<br>
 
 ### 6	MODELO LÓGICO<br>
-![Modelo Lógico](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/modelos/logico.png)
+        a) inclusão do esquema lógico do banco de dados
+        b) verificação de correspondencia com o modelo conceitual 
+        (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-##### CLIENTE
-```sql
-CREATE TABLE CLIENTE(
-	codigo integer NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	estado varchar(2),
-	cidade varchar(100),
-	bairro varchar(100),
-	rua varchar(100),
-	numero_end integer,
-	PRIMARY KEY (codigo)
-);
-```
-##### PESSOA_FISICA
-```sql
-CREATE TABLE PESSOA_FISICA(
-	codigo integer NOT NULL,
-	cpf varchar(11),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
-);
-```
-##### PESSOA_JURIDICA
-```sql
-CREATE TABLE PESSOA_JURIDICA(
-	codigo integer NOT NULL,
-	cnpj varchar(14),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
-);
-```
-##### ENTREGADOR
-```sql
-CREATE TABLE ENTREGADOR(
-	cpf varchar(11) NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	PRIMARY KEY (cpf)
-);
-```
-##### ENTREGA
-```sql
-CREATE TABLE ENTREGA(
-    codigo integer NOT NULL,
-    cliente_envio integer NOT NULL,
-    cliente_recebe integer NOT NULL,
-    entregador_cpf varchar(11) NOT NULL,
-    data_envio date,
-    data_recebimento date,
-    PRIMARY KEY (codigo),
-    FOREIGN KEY (cliente_envio) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (cliente_recebe) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (entregador_cpf) REFERENCES entregador(cpf) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
-);
-```
+        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
+        (criação de tabelas, alterações, etc..) 
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-#### Drop
-```sql
-DROP TABLE IF EXISTS cliente CASCADE;
-DROP TABLE IF EXISTS pessoa_fisica;
-DROP TABLE IF EXISTS pessoa_juridica;
-DROP TABLE IF EXISTS entregador CASCADE;
-DROP TABLE IF EXISTS entrega;
-```
+        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
+        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
+        b) Criar um novo banco de dados para testar a restauracao 
+        (em caso de falha na restauração o grupo não pontuará neste quesito)
+        c) formato .SQL
 
-#### Create
-```sql
-CREATE TABLE CLIENTE(
-	codigo integer NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	estado varchar(2),
-	cidade varchar(100),
-	bairro varchar(100),
-	rua varchar(100),
-	numero_end integer,
-	PRIMARY KEY (codigo)
-);
-
-CREATE TABLE PESSOA_FISICA(
-	codigo integer NOT NULL,
-	cpf varchar(11),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE PESSOA_JURIDICA(
-	codigo integer NOT NULL,
-	cnpj varchar(14),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE ENTREGADOR(
-	cpf varchar(11) NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	PRIMARY KEY (cpf)
-);
-
-CREATE TABLE ENTREGA(
-    codigo integer NOT NULL,
-    cliente_envio integer NOT NULL,
-    cliente_recebe integer NOT NULL,
-    entregador_cpf varchar(11) NOT NULL,
-    data_envio date,
-    data_recebimento date,
-    PRIMARY KEY (codigo),
-    FOREIGN KEY (cliente_envio) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (cliente_recebe) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (entregador_cpf) REFERENCES entregador(cpf) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
-);
-```
-#### Insert
-##### Clientes
-
-```sql
-INSERT INTO CLIENTE
-VALUES
-	(1, 'João Martins', '11911111111', 'ES', 'Serra', 'Bairro das Rosas', 'Caramelo', 11),
-	(2, 'Danilo Castro Ferreira', '19933355914', 'SP', 'Sumaré', 'Sensatez', 'Rua Grécia', 570),
-	(3, 'Martim Castro Pinto', '21950609917', 'RJ', 'Rio de Janeiro', 'Carvalho', 'Rua do Trabalho', 1367),
-	(4, 'Laura Melo Santos', '21986236017', 'RJ', 'São Gonçalo', 'Bairro da Paz', 'Rua Mário Viana', 1099),
-	(5, 'Matilde Melo Santos', '11926222140', 'SP', 'São Paulo', 'Carlos Luz', 'Praça Alfredo Issa', 1231),
-	(6, 'Kauê Cardoso Goncalves', '61947413132', 'DF', 'Gama', 'Cajares', 'Rua P 4', 1478),
-	(7, 'Bruno Dias Pereira', '11974744573', 'SP', 'Osasco', 'Lagoas', 'Rua Domingos Bastazini', 1486),
-	(8, 'Pastelaria Teixeira', '27967056547', 'ES', 'São Mateus', 'Bela Vista', 'Pará', 495),
-	(9, 'Padaria União', '98937586073', 'MA', 'São Luís', 'Industrial', 'Paraná', 7663),
-	(10, 'Pietra e Nina Publicidade e Propaganda ME', '11999855952', 'SP', 'Itatiba', 'Jardim América', 'Rua Augusto Eduardo Berti', 898),
-	(11, 'Carolina e Sônia Lavanderia ME', '64998505506', 'GO', 'Rio Verde', 'Vila Amália', 'Rua 5', 211),
-	(12, 'Ian e Ester Vidros ME', '61987759223', 'GO', 'Luziânia', 'Parque Estrela Dalva V', 'Rua 67', 816),
-	(13, 'Martin e Daniel Ferragens ME', '68985116420', 'AC', 'Rio Branco', 'Bahia Velha', 'Beco Cecília Freitas', 266),
-	(14, 'Apollo Artigos Gerais', '63989572172', 'TO', 'Gurupi', 'Shangri-Lá', 'Rua B 2', 989),
-	(18, 'Joaquim e Stefany Comercio de Bebidas Ltda', '11994625578', 'SP', 'São Paulo', 'Jabaquara', 'Rua Monsenhor Basílio Pereira', 521),
-	(19, 'Anthony e Alexandre Pães e Doces Ltda', '15994767868', 'SP', 'Sorocaba', 'Vila Zacarias', 'Rua Doutor Sydneu Antônio Urban', 286),
-	(20, 'Sua Pizza Delivery ME', '18991644147', 'GO', 'Rio Verde', 'Catelandia', 'Rua Major Rocha', 1517);
-```
-##### PESSOA_FISICA
-```sql
-INSERT INTO pessoa_fisica
-VALUES
-	(1, '75198965014'),
-	(2, '48972624020'),
-	(3, '67941668289'),
-	(4, '44585241787'),
-	(5, '43388477000'),
-	(6, '22244606007'),
-	(7, '31370743041');
-```
-##### PESSOA_JURIDICA
-```sql
-INSERT INTO pessoa_juridica
-VALUES
-	(8, '19215089000131'),
-	(9, '86567879000173'),
-	(10, '31750078000157'),
-	(11, '04046901000175'),
-	(12, '67332463000121'),
-	(13, '92712036000116'),
-	(14, '03436907000196'),
-    	(18, '62319531000107'),
-	(19, '57740003000189'),
-	(20, '32545024000112');
-```
-##### ENTREGADOR
-```sql
-INSERT INTO entregador
-VALUES
-	('87712919038', 'Rafael Cardoso Correia', '11947705880'),
-	('91773289063', 'Rodrigo Cardoso Dias', '61939542649'),
-	('54282005025', 'Thaís Ribeiro Barros', '19954754928'),
-	('52872702083', 'Mateus Sousa Costa', '61998679042'),
-	('04295519081', 'Sarah Correia Barros', '31985966293'),
-	('39706964029', 'Luis Oliveira Ribeiro', '93935138484'),
-	('93528591030', 'Gustavo Alves Rocha', '21942156639'),
-	('44808974967', 'Anna Oliveira Pinto', '1991312944'),
-	('12671964919', 'Livia Castro Rodrigues', '8191202990');
-```
-##### ENTREGA
-```sql
-INSERT INTO entrega
-VALUES
-	(1, 2, 3, '52872702083', '2012-06-01', '2012-07-05'),
-	(2, 2, 3, '52872702083', '2013-02-01', '2013-03-06'),
-	(3, 1, 5, '87712919038', '2018-04-01', '2018-04-12'),
-	(4, 14, 6, '93528591030', '2020-03-14', '2020-03-30'),
-	(5, 8, 4, '54282005025', '2020-09-25', '2020-10-10'),
-	(6, 8, 5, '93528591030', '2020-12-01', '2020-12-14'),
-	(7, 14, 6, '93528591030', '2021-04-30', '2021-05-11'),
-	(8, 14, 20, '44808974967', '2021-05-02', '2021-05-10'),
-	(9, 18, 11, '12671964919', '2021-05-13', '2021-05-19'),
-	(10, 19, 1, '04295519081', '2021-06-01', '2021-07-01');
-```
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-```sql
-SELECT * FROM cliente;
-
-SELECT * FROM pessoa_fisica;
-SELECT * FROM pessoa_juridica;
-
-SELECT * FROM entregador;
-
-SELECT * FROM entrega;
-```
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
