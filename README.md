@@ -310,13 +310,27 @@ VALUES
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 ```sql
 SELECT * FROM pessoa;
+```
+![Resultado do select em pessoa pt.1](#)
+![Resultado do select em pessoa pt.2](#)
+![Resultado do select em pessoa pt.3](#)
 
+```sql
 SELECT * FROM pessoa_fisica;
-SELECT * FROM pessoa_juridica;
+```
+![Resultado do select em pessoa_fisica](#)
+```sql
+SELECT * FROM pessoa_juridca;
+```
+![Resultado do select em pessoa_juridica](#)
+```sql
 SELECT * FROM entregador;
-
+```
+![Resultado do select em entregador](#)
+```sql
 SELECT * FROM entrega;
 ```
+![Resultado do select em entrega](#)
 
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
