@@ -68,7 +68,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 Descrição dos dados 
-Pessoa: Tabela que armazena as informações das pessoas envolvidas com a entrega.<br>
+PESSOA: Tabela que armazena as informações das pessoas envolvidas com a entrega.<br>
 CODIGO: Campo que refere-se a identificação de cada cliente na tabela CLIENTE.<br>
 TELEFONE: Campo que guarda o número de telefone de cada um dos clientes da empresa.<br>
 NOME: Campo que guarda o nome completo dos clientes.<br>
