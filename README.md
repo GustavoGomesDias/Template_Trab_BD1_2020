@@ -49,7 +49,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-- [Link da tabela no google docs](https://docs.google.com/spreadsheets/d/13_0Fg4CH-A-yabEl_K-JrE4yPIx7Xz_6iWWepAXBzsE/edit?usp=sharing)
+- [Link da tabela no google docs](https://docs.google.com/spreadsheets/d/1ZCAK7A39AChPlSG1pVAqZ8scKzA3JVNtziF6iV5Lalo/edit?usp=sharing)
 - [Link arquivo csv](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/tabela/yourDelivery.csv) (tá neste repo e é possível ver a tabela formatada)
 - [Download do arquivo xlsx](https://github.com/GustavoGomesDias/YourDelivery/blob/master/arquivos_trabalho/tabela/yourDelivery.xlsx?raw=true)
     
