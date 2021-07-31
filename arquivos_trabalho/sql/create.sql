@@ -1,4 +1,4 @@
-CREATE TABLE CLIENTE(
+CREATE TABLE pessoa(
 	codigo integer NOT NULL,
 	nome varchar(100),
 	telefone varchar(16),
@@ -13,31 +13,36 @@ CREATE TABLE CLIENTE(
 CREATE TABLE PESSOA_FISICA(
 	codigo integer NOT NULL,
 	cpf varchar(11),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE PESSOA_JURIDICA(
 	codigo integer NOT NULL,
 	cnpj varchar(14),
-	FOREIGN KEY(codigo) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ENTREGADOR(
-	cpf varchar(11) NOT NULL,
-	nome varchar(100),
-	telefone varchar(16),
-	PRIMARY KEY (cpf)
+	codigo integer NOT NULL,
+	cnh varchar(14),
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE ENTREGA(
-    codigo integer NOT NULL,
-    cliente_envio integer NOT NULL,
-    cliente_recebe integer NOT NULL,
-    entregador_cpf varchar(11) NOT NULL,
-    data_envio date,
-    data_recebimento date,
-    PRIMARY KEY (codigo),
-    FOREIGN KEY (cliente_envio) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (cliente_recebe) REFERENCES cliente(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (entregador_cpf) REFERENCES entregador(cpf) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+	codigo integer NOT NULL,
+	tipo_entrega varchar(30),
+	peso_entrega float,
+	alt_entrega float,
+	larg_entrega float,
+	profun_entrega float,
+	qtd_entrega integer,
+	data_envio date,
+	data_recebimento date,
+	cliente_envio integer NOT NULL,
+	cliente_recebe integer NOT NULL,
+	entregador integer NOT NULL,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (cliente_envio) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (cliente_recebe) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (entregador) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
 );

@@ -96,12 +96,128 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+#### Drop
+```sql
+DROP TABLE IF EXISTS cliente CASCADE;
+DROP TABLE IF EXISTS pessoa_fisica;
+DROP TABLE IF EXISTS pessoa_juridica;
+DROP TABLE IF EXISTS entregador CASCADE;
+DROP TABLE IF EXISTS entrega;
+```
 
+#### Create
+```sql
+CREATE TABLE pessoa(
+	codigo integer NOT NULL,
+	nome varchar(100),
+	telefone varchar(16),
+	estado varchar(2),
+	cidade varchar(100),
+	bairro varchar(100),
+	rua varchar(100),
+	numero_end integer,
+	PRIMARY KEY (codigo)
+);
+
+CREATE TABLE PESSOA_FISICA(
+	codigo integer NOT NULL,
+	cpf varchar(11),
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE PESSOA_JURIDICA(
+	codigo integer NOT NULL,
+	cnpj varchar(14),
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE ENTREGADOR(
+	codigo integer NOT NULL,
+	cnh varchar(14),
+	FOREIGN KEY(codigo) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE ENTREGA(
+	codigo integer NOT NULL,
+	tipo_entrega varchar(30),
+	peso_entrega float,
+	alt_entrega float,
+	larg_entrega float,
+	profun_entrega float,
+	qtd_entrega integer,
+	data_envio date,
+	data_recebimento date,
+	cliente_envio integer NOT NULL,
+	cliente_recebe integer NOT NULL,
+	entregador integer NOT NULL,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (cliente_envio) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (cliente_recebe) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (entregador) REFERENCES pessoa(codigo) MATCH FULL ON DELETE CASCADE ON UPDATE CASCADE
+);
+```
+#### Insert
+```sql
+INSERT INTO PESSOA
+VALUES
+	(1, 'João Martins', '11911111111', 'ES', 'Serra', 'Bairro das Rosas', 'Caramelo', 11),
+	(2, 'Danilo Castro Ferreira', '19933355914', 'SP', 'Sumaré', 'Sensatez', 'Rua Grécia', 570),
+	(3, 'Martim Castro Pinto', '21950609917', 'RJ', 'Rio de Janeiro', 'Carvalho', 'Rua do Trabalho', 1367),
+	(4, 'Laura Melo Santos', '21986236017', 'RJ', 'São Gonçalo', 'Bairro da Paz', 'Rua Mário Viana', 1099),
+	(5, 'Matilde Melo Santos', '11926222140', 'SP', 'São Paulo', 'Carlos Luz', 'Praça Alfredo Issa', 1231),
+	(6, 'Kauê Cardoso Goncalves', '61947413132', 'DF', 'Gama', 'Cajares', 'Rua P 4', 1478),
+	(7, 'Bruno Dias Pereira', '11974744573', 'SP', 'Osasco', 'Lagoas', 'Rua Domingos Bastazini', 1486),
+	(8, 'Pastelaria Teixeira', '27967056547', 'ES', 'São Mateus', 'Bela Vista', 'Pará', 495),
+	(9, 'Padaria União', '98937586073', 'MA', 'São Luís', 'Industrial', 'Paraná', 7663),
+	(10, 'Pietra e Nina Publicidade e Propaganda ME', '11999855952', 'SP', 'Itatiba', 'Jardim América', 'Rua Augusto Eduardo Berti', 898),
+	(11, 'Carolina e Sônia Lavanderia ME', '64998505506', 'GO', 'Rio Verde', 'Vila Amália', 'Rua 5', 211),
+	(12, 'Ian e Ester Vidros ME', '61987759223', 'GO', 'Luziânia', 'Parque Estrela Dalva V', 'Rua 67', 816),
+	(13, 'Martin e Daniel Ferragens ME', '68985116420', 'AC', 'Rio Branco', 'Bahia Velha', 'Beco Cecília Freitas', 266),
+	(14, 'Apollo Artigos Gerais', '63989572172', 'TO', 'Gurupi', 'Shangri-Lá', 'Rua B 2', 989),
+	(18, 'Joaquim e Stefany Comercio de Bebidas Ltda', '11994625578', 'SP', 'São Paulo', 'Jabaquara', 'Rua Monsenhor Basílio Pereira', 521),
+	(19, 'Anthony e Alexandre Pães e Doces Ltda', '15994767868', 'SP', 'Sorocaba', 'Vila Zacarias', 'Rua Doutor Sydneu Antônio Urban', 286),
+	(20, 'Sua Pizza Delivery ME', '18991644147', 'GO', 'Rio Verde', 'Catelandia', 'Rua Major Rocha', 1517),
+	(100, 'Mateus Sousa Costa', '61998679042', 'MG', 'Betim', 'Bairro das Cruzes', 'Rua José da Conceição', 460),
+	(101, 'Rafael Cardoso Correia', '11947705880', 'SP', 'São Paulo', 'Bairro da Tijuca', 'Rua Pedra Lavrada', 1065),
+	(102, 'Gustavo Alves Rocha', '21942156639', 'RS', 'Porto Alegre', 'Bairro do Crescimento', 'Acesso E', 164),
+	(103, 'Thaís Ribeiro Barros', '19954754928', 'PE', 'Petrolina', 'Bairro das Palmeiras', 'Rua Deputada Ana Oliveira', 1528),
+	(104, 'Anna Oliveira Pinto', '19954754928', 'PR', 'Curitiba', 'Bairro da Catedral', 'Rua Astor Toniolo', 1115),
+	(105, 'Livia Castro Rodrigues', '8191202990', 'MG', 'Montes Claros', 'Bairro Serra City', 'Rua C', 1703),
+	(106, 'Sarah Correia Barros', '31985966293', 'SP', 'Jacareí', 'Bairro Joaninha', 'Rua Olímpio Catão', 507);
+	
+INSERT INTO pessoa_fisica
+VALUES
+	(1, '75198965014'),
+	(2, '48972624020'),
+	(3, '67941668289'),
+	(4, '44585241787'),
+	(5, '43388477000'),
+	(6, '22244606007'),
+	(7, '31370743041');
+	
+INSERT INTO pessoa_juridica
+VALUES
+	(8, '19215089000131'),
+	(9, '86567879000173'),
+	(10, '31750078000157'),
+	(11, '04046901000175'),
+	(12, '67332463000121'),
+	(13, '92712036000116'),
+	(14, '03436907000196'),
+	(18, '62319531000107'),
+	(19, '57740003000189'),
+	(20, '32545024000112');
+
+INSERT INTO entregador
+VALUES
+	(100, '03993638185'),
+	(101, '37376176159'),
+	(102, '56845638820'),
+	(103, '64984431466'),
+	(104, '82192867698'),
+	(105, '07055649667'),
+	(106, '17699458222');
+```
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
