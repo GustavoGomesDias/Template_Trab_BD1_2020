@@ -60,9 +60,7 @@ gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 - Principais entidades
   - Entrega;
   - Pessoa;
-  - Entregador;    
-    
-        
+  - Entregador;
     
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Nomes dos que participaram na avaliação]
@@ -336,6 +334,9 @@ SELECT * FROM entrega;
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+[Link da célula no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=KROzTTuHwQuM)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/celula9-2.png" height="400px">
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
