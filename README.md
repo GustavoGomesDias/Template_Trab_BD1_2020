@@ -334,13 +334,55 @@ SELECT * FROM entrega;
 ># Marco de Entrega 01: Do item 1 até o item 9.1<br>
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-[Link da célula no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=KROzTTuHwQuM)
 
-<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/celula9-2.png" height="400px">
+##### [Link da célula 9.2 no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=KROzTTuHwQuM)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-2/celula9-2.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-2/celula9-2-so.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-2/celula9-2-no.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-2/celula9-2-co.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-2/celula9-2-su.png">
+</details>
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+##### [Link para célula 9.3 (a) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=eQp17ONhw3Nc)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-a/celula9-3-a.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-a/celula9-3-not-sp.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-a/celula9-3-fragil.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-a/celula9-3-entregador.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-a/celula9-3-cliente14.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-a/celula9-3-ultima.png">
+</details>
+
+##### [Link para célula 9.3 (b) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=KmU47X3pFTEk)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-b/celula9-3-b.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-b/celula9-3-peso.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-b/celula9-3-massa.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-b/celula9-3-volume.png">
+</details>
+
+##### [Link para célula 9.3 (c) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=R_qNYD_Z5xA3)
+
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-c/celula9-3-c.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-c/celula9-3-codigo.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-c/celula9-3-infos.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-3/task9-3-c/celula9-3-end.png">
+</details>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
