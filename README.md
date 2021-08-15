@@ -385,16 +385,66 @@ SELECT * FROM entrega;
 </details>
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+    
+##### [Link para célula 9.4 (a) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=R_qNYD_Z5xA3)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/task9-4-a.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-castro.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-cpf.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-ddd.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-me.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-praca.png">
+</details>
+
+##### [Link para célula 9.4 (b) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=FM4vs-c9mU9C)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-b/task9-4-b.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-b/task9-4-2020.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-b/task9-4-entrega.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-ddd.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-a/taskPessoas-com-me.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-4/task9-4-b/task9-4-not-2020.png">
+</details>
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-    a) Criar minimo 3 de exclusão
-    b) Criar minimo 3 de atualização
+
+##### [Link para célula 9.5 (a) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=sM_pG5RGpth0)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-a/task9-5-a.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-a/task9-5-entrega1.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-a/task9-5-pessoa.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-a/task9-5-pessoa-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-a/task9-5-rua-code.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-a/task9-5-rua-table.png">
+</details>
+
+##### [Link para célula 9.5 (b) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=rBsWhljtJtPP)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-b/task9-5-b.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-b/task9-5-empresa.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-b/task9-5-empresa-code.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-b/task9-5-num.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-5/task9-5-b/task9-5-peso.png">
+</details>
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+
+##### [Link para célula 9.6 (a) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=GQOKnTr1jOim)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks9-6-a/task9-6-a.png">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks9-6-a/task9-6-a-table.png"
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
