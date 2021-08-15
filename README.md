@@ -444,21 +444,91 @@ SELECT * FROM entrega;
 ##### [Link para célula 9.6 (a) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=GQOKnTr1jOim)
 
 <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks9-6-a/task9-6-a.png">
-<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks9-6-a/task9-6-a-table.png"
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks9-6-a/task9-6-a-table.png">
 
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
+##### [Link para célula 9.6 (b) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=eRt6sy8t6z5V&line=4&uniqifier=1)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks-9-6-b/task9-6-b.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks-9-6-b/task9-6-route.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks-9-6-b/task9-6-pj.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks-9-6-b/task9-6-pf.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks-9-6-b/task9-6-ent.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-6/taks-9-6-b/task9-6-ent-entregas.png">
+</details>
+
+#### 9.7 CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+
+##### [Link para célula 9.7 no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=joBRHfiWX5kV&line=9&uniqifier=1)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7-envio-count.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7-est-count.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7-media.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7-dias.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7-tipos.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task-9-7/task9-7-trab.png">
+</details>
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
+
+##### [Link para célula 9.8 no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=y6cz5NMBdGOd&line=5&uniqifier=1)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-left.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-left-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-right.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-right-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-full.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-full-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-8/task9-8-ent.png">
+</details>
 
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+
+##### [Link para célula 9.9 (a) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=NdLJyvCUZKQu)
+
+##### [Link para célula 9.9 (b) no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=-vnDkXwXgJ8T&line=8&uniqifier=1)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-a.png">
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-b.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-infos.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-infos-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-infos-extends.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-infos-extends-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-media.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-mes.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-mes-exemplo.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-tempo.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-9/task9-9-b/task9-9-trab.png">
+	
+</details>
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
+
+##### [Link para célula 9.10 no colab](https://colab.research.google.com/drive/14MIiTUddfrG3DQQRdfoihld2VgYLhlBi?authuser=1#scrollTo=at762QBZvekp&line=8&uniqifier=1)
+
+<img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-10/task9-10.png">
+
+<details>
+  <summary>Clique para ver as imagens</summary>
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-10/task9-10-bot-delivery.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-10/task9-10-clientes.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-10/task9-10-clientes-table.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-10/task9-10-envio.png">
+  <img src="https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/colab/task9-10/task9-10-ltda.png">
+</details>
 
 ># Marco de Entrega 02: Do item 9.2 até o ítem 9.10<br>
 
