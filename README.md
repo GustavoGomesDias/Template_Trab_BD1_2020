@@ -534,16 +534,182 @@ SELECT * FROM entrega;
 
 ### 10 RELATÓRIOS E GRÁFICOS
 
-#### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
-#### b) link com exemplo de relatórios será disponiblizado pelo professor no AVA
-#### OBS: Esta é uma atividade de grande relevância no contexto do trabalho. Mantenha o foco nos 5 principais relatórios/resultados visando obter o melhor resultado possível.
+#### Relatório 1
 
-    
+```py
+res = pd.read_sql_query("""
+  SELECT tipo_entrega AS "Tipo da Entrega", extract(year from data_envio)::int AS "Ano de envio", count(*) AS "Quantidade" FROM ENTREGA
+  GROUP BY extract(year from data_envio), tipo_entrega
+  ORDER BY extract(year from data_envio) DESC, count(*) DESC
+""", conn)
+g = sns.catplot(x="Ano de envio", y="Quantidade", hue="Tipo da Entrega", data=res, kind="point")
+plt.title("Quantidade de entrega separadas por tipo realizada em cada ano", fontsize=15)
+plt.show()
+```
+![Relatório 1](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/graficos/report1.png)
+
+#### Relatório 2
+
+```py
+def views():
+  try:
+    elephante_cursor.execute("""
+      CREATE OR REPLACE VIEW select_so AS 
+      SELECT p.estado AS "remetente", p1.estado AS "destinatario"
+      FROM ENTREGA e
+      INNER JOIN PESSOA p ON (p.codigo = e.cliente_envio)
+      INNER JOIN PESSOA p1 ON (p1.codigo = e.cliente_recebe)
+      WHERE p.estado = 'SP' OR p.estado = 'ES' OR p.estado = 'RJ' OR p.estado = 'MG'
+      AND p1.estado = 'SP' OR p1.estado = 'ES' OR p1.estado = 'RJ' OR p1.estado = 'MG'
+    """)
+    elephante_cursor.execute("""
+      CREATE OR REPLACE VIEW select_co AS 
+      SELECT p.estado AS "remetente", p1.estado AS "destinatario"
+      FROM ENTREGA e
+      INNER JOIN PESSOA p ON (p.codigo = e.cliente_envio)
+      INNER JOIN PESSOA p1 ON (p1.codigo = e.cliente_recebe)
+      WHERE p.estado = 'GO' OR p.estado = 'MT' OR p.estado = 'MS' OR p.estado = 'DF'
+      AND p1.estado = 'GO' OR p1.estado = 'MT' OR p1.estado = 'MS' OR p1.estado = 'DF'
+    """)
+    elephante_cursor.execute("""
+      CREATE OR REPLACE VIEW select_no AS 
+      SELECT p.estado AS "remetente", p1.estado AS "destinatario"
+      FROM ENTREGA e
+      INNER JOIN PESSOA p ON (p.codigo = e.cliente_envio)
+      INNER JOIN PESSOA p1 ON (p1.codigo = e.cliente_recebe)
+      WHERE p.estado = 'AL' OR p.estado = 'BA' OR p.estado = 'CE' OR p.estado = 'MA' OR p.estado = 'PB' OR p.estado = 'PE' or p.estado = 'PI' OR p.estado = 'RN' or p.estado = 'SE'
+      AND p1.estado = 'AL' OR p1.estado = 'BA' OR p1.estado = 'CE' OR p1.estado = 'MA' OR p1.estado = 'PB' OR p1.estado = 'PE' or p1.estado = 'PI' OR p1.estado = 'RN' or p1.estado = 'SE'
+    """)
+    elephante_cursor.execute("""
+      CREATE OR REPLACE VIEW select_n AS 
+      SELECT p.estado AS "remetente", p1.estado AS "destinatario"
+      FROM ENTREGA e
+      INNER JOIN PESSOA p ON (p.codigo = e.cliente_envio)
+      INNER JOIN PESSOA p1 ON (p1.codigo = e.cliente_recebe)
+      WHERE p.estado = 'AC' OR p.estado = 'AP' OR p.estado = 'AM' OR p.estado = 'PA' OR p.estado = 'RO' OR p.estado = 'RR' or p.estado = 'TO'
+      AND p1.estado = 'AC' OR p1.estado = 'AP' OR p1.estado = 'AM' OR p1.estado = 'PA' OR p1.estado = 'RO' OR p1.estado = 'RR' or p1.estado = 'TO'
+    """)
+    elephante_cursor.execute("""
+      CREATE OR REPLACE VIEW select_s AS 
+      SELECT p.estado AS "remetente", p1.estado AS "destinatario"
+      FROM ENTREGA e
+      INNER JOIN PESSOA p ON (p.codigo = e.cliente_envio)
+      INNER JOIN PESSOA p1 ON (p1.codigo = e.cliente_recebe)
+      WHERE p.estado = 'PR' OR p.estado = 'SC' OR p.estado = 'RS'
+      AND p1.estado = 'PR' OR p1.estado = 'SC' OR p1.estado = 'RS'
+    """)
+  except (Exception, psycopg2.DatabaseError) as error:
+    print(error)
+    conn.rollback()
+  else:
+    conn.commit()
+views()
+
+result = pd.read_sql_query("""
+  SELECT
+  COUNT(*) AS "Sudeste",
+  (SELECT COUNT(*) FROM select_no) AS "Nordeste",
+  (SELECT COUNT(*) FROM select_co) AS "Centro-Oeste",
+  (SELECT COUNT(*) FROM select_n) AS "Norte",
+  (SELECT COUNT(*) FROM select_s) AS "Sul"
+  FROM select_so
+""", conn)
+
+plt.ylabel("Qtd. de serviços prestados")
+plt.xlabel("Regiões do Brasil")
+total = sum([result.get("Sudeste")[0], result.get("Nordeste")[0], result.get("Centro-Oeste")[0], result.get("Norte")[0], result.get("Sul")[0]])
+percentage = [
+       ((result.get("Sudeste")[0] * 100) / total),
+       ((result.get("Nordeste")[0] * 100) / total),
+       ((result.get("Centro-Oeste")[0] * 100) / total),
+       ((result.get("Norte")[0] * 100) / total),
+       ((result.get("Sul")[0] * 100) / total)
+      ]
+ax = sns.barplot(data=result);
+
+patches = ax.patches
+for i in range(len(patches)):
+   x = patches[i].get_x() + patches[i].get_width()/2
+   y = patches[i].get_height()+.05
+   ax.annotate('{:.1f}%'.format(percentage[i]), (x, y), ha='center')
+
+plt.title("Entregas realizadas por região do Brasil", fontsize=15)
+# fig = g.get_figure()
+# # Salvar o gráfico como imagem
+# fig.savefig("./report/report2.png")
+plt.show()
+```
+
+![Relatório 2](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/graficos/report2.png)
+
+#### Relatório 3
+
+```js
+relatorio_3 = pd.read_sql_query("""
+  SELECT p.nome AS "Nome", ent.cnh AS "CNH", COUNT(*) AS "Número de entregas", AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int AS "Tempo médio de entrega (em Dias)"
+  FROM entrega e
+  INNER JOIN pessoa p ON (p.codigo = e.entregador)
+  INNER JOIN entregador ent ON (ent.codigo = e.entregador)
+  GROUP BY p.nome, ent.cnh
+  ORDER BY COUNT(*) DESC, AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int
+""", conn)
+
+sns.set(rc={'figure.figsize':(30,8.27)})
+f, ax1=plt.subplots()
+ax2 = ax1.twinx()
+sns.lineplot(data=relatorio_3.get("Tempo médio de entrega (em Dias)"), marker='o', ax=ax2)
+sns.barplot(x="CNH", y="Número de entregas", data=relatorio_3, ax=ax1)
+plt.title("Qtd. de entregas realizadas por cada entregador e a média do tempo de entrega de cada um", fontsize=15)
+```
+
+![Relatório 3](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/graficos/report3.png)
+
+#### Relatório 4
+
+```py
+relatorio_4 = pd.read_sql_query("""
+  SELECT COUNT(pf.*) AS "Pessoa física", COUNT(pj.*) AS "Pessoa jurídica"
+  FROM entrega e
+  LEFT OUTER JOIN pessoa_fisica pf ON (pf.codigo = e.cliente_envio)
+  LEFT OUTER JOIN pessoa_juridica pj ON (pj.codigo = e.cliente_envio)
+""", conn)
+
+sns.set(rc={'figure.figsize':(11,8.27)})
+label = relatorio_4.keys()
+ax = plt.pie(x=relatorio_4, autopct="%.f%%", pctdistance=0.5, labels=label)
+plt.title("Contratações por tipo de clientes", fontsize=15)
+plt.show()
+```
+
+![Relatório 4](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/graficos/report4.png)
+
+#### Relatório 5
+
+```py
+relatorio_5 = pd.read_sql_query("""
+  SELECT AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int AS "Sudeste",
+  (SELECT AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int FROM select_no) AS "Nordeste",
+  (SELECT AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int FROM select_co) AS "Centro-Oeste",
+  (SELECT AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int FROM select_s) AS "Sul",
+  (SELECT AVG(EXTRACT(EPOCH FROM (age(data_recebimento, data_envio)))/(60*60*24))::int FROM select_n) AS "Norte"
+  FROM select_so
+""", conn)
+
+sns.set(rc={'figure.figsize':(12,8.27)})
+plt.ylabel("Regiões do Brasil")
+plt.xlabel("Média do tempo de entrega (em dias)")
+sns.barplot(data=relatorio_5, orient="h")
+plt.title("Tempo médio de entrega de cada região", fontsize=15)
+plt.show()
+```
+
+![Relatório 5](https://github.com/GustavoGomesDias/YourDelivery/blob/master/images/graficos/report5.png)    
 
 ### 11	AJUSTES DA DOCUMENTAÇÃO, CRIAÇÃO DOS SLIDES E VÍDEO PARA APRESENTAÇAO FINAL <br>
 
-#### a) Modelo (pecha kucha)<br>
-#### b) Tempo de apresentação 6:40 
+[Link paraos slides](https://docs.google.com/presentation/d/12hJN8MbDMokW1Mcc-RKy2tc1pOGK9s339ghdmXJYpcU/edit?usp=sharing)
+
+[Link para a apresentação](https://youtu.be/9fzwEdYtvno)
 
 ># Marco de Entrega 03: Itens 10 e 11<br>
 <br>
